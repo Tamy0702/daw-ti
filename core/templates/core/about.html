@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Acerca de - Kenny Tuarez{% endblock %}
+
+{% block header_image %}{% static 'core/img/about-bg.jpg' %}{% endblock %}
+{% block header_title %}Acerca de{% endblock %}
+{% block header_subtitle %}Biografía{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-4 col-md-4">
+      <img class="img-fluid avatar" src="{% static 'core/img/avatar.jpg' %}" alt="Avatar Kenny Tuarez">
+    </div>
+    <div class="col-lg-8 col-md-8">
+      <h2 class="section-heading">Kenny Tuarez</h2>
+      <p>Nacido en el canton Pichincha, provincia de Manabi, Ecuador.</p>
+      <p>Estudiante de la Universidad Tecnica de Manabi, carrera Tegnologias de la Informacion, sexto semestre </p>
+    </div>
+  </div>
+
+{% endblock %}

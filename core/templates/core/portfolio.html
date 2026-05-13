@@ -1,0 +1,31 @@
+{% extends "core/base.html" %}
+
+{% block title %}Portafolio - Kenny Tuarez{% endblock %}
+
+{% block header_image %}{% load static %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
+{% block header_title %}Portafolio{% endblock %}
+{% block header_subtitle %}Currículo{% endblock %}
+
+{% block content %}
+  {% load static %}
+
+  {% for item in items %}
+  <div class="row project mb-4">
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+      {% if item.image %}
+        <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
+      {% else %}
+        <img class="img-fluid" src="{% static 'core/img/about-bg.jpg' %}" alt="{{ item.title }}">
+      {% endif %}
+    </div>
+    <div class="col-lg-7 col-md-8">
+      <h2 class="section-heading title">{{ item.title }}</h2>
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
+  {% empty %}
+    <p>No hay proyectos disponibles.</p>
+  {% endfor %}
+
+
+{% endblock %}
