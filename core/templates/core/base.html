@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% block title %}Kenny Tuarez{% endblock %}</title>
+    <title>{% block title %}Tamara Bravo{% endblock %}</title>
     {% load static %}
     <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
@@ -14,9 +14,12 @@
   <body>
 
     <!-- Navegación -->
+
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">Kenny Tuarez</a>
+            <a class="navbar-brand" href="{% url 'home' %}">
+    {% if persona %}{{ persona.nombres }} {{ persona.apellidos }}{% else %}Tamara Bravo{% endif %}
+</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
           data-target="#navbarResponsive" aria-controls="navbarResponsive"
           aria-expanded="false" aria-label="Toggle navigation">
@@ -40,8 +43,12 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>{% block header_title %}Kenny Tuarez{% endblock %}</h1>
-              <span class="subheading">{% block header_subtitle %}Ingeniero en TI{% endblock %}</span>
+    <h1>{% block header_title %}
+    {% if persona %}{{ persona.nombres }} {{ persona.apellidos }}{% else %}Tamara Bravo{% endif %}
+{% endblock %}</h1>
+<span class="subheading">{% block header_subtitle %}
+    {% if persona %}{{ persona.titulo_academico }}{% else %}Ingeniera en TI{% endif %}
+{% endblock %}</span>
             </div>
           </div>
         </div>
@@ -85,7 +92,9 @@
                 </span></a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; 2018 · Kenny Tuarez (Ingeniero en TI)</p>
+<p class="copyright text-muted">Copyright &copy; 2026 ·
+    {% if persona %}{{ persona.nombres }} {{ persona.apellidos }} ({{ persona.titulo_academico }}){% else %}Tamara Bravo{% endif %}
+</p>
           </div>
         </div>
       </div>

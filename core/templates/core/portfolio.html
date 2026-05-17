@@ -1,6 +1,6 @@
 {% extends "core/base.html" %}
 
-{% block title %}Portafolio - Kenny Tuarez{% endblock %}
+{% block title %}Portafolio - Tamara Bravo{% endblock %}
 
 {% block header_image %}{% load static %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
 {% block header_title %}Portafolio{% endblock %}
@@ -11,14 +11,14 @@
 
   {% for item in items %}
   <div class="row project mb-4">
-    <div class="col-lg-3 col-md-4 offset-lg-1">
+    <div class="col-lg-4 col-md-5 offset-lg-1">
       {% if item.image %}
         <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
       {% else %}
         <img class="img-fluid" src="{% static 'core/img/about-bg.jpg' %}" alt="{{ item.title }}">
       {% endif %}
     </div>
-    <div class="col-lg-7 col-md-8">
+    <div class="col-lg-6 col-md-7">
       <h2 class="section-heading title">{{ item.title }}</h2>
       <p>{{ item.description }}</p>
     </div>

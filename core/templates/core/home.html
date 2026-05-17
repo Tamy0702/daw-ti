@@ -1,4 +1,6 @@
 {% extends "core/base.html" %}
 {% load static %}
-{% block title %}Portada - Kenny Tuarez{% endblock %}
+{% block title %}Portada - {% if persona %}{{ persona.nombres }}{% endif %}{% endblock %}
 {% block header_image %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
+{% block header_title %}{% if persona %}{{ persona.nombres }} {{ persona.apellidos }}{% endif %}{% endblock %}
+{% block header_subtitle %}{% if persona %}{{ persona.titulo_academico }}{% endif %}{% endblock %}

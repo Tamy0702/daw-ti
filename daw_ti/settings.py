@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-pr@5n%!h87@%xy6y$f)6sqhh&p=r+p1()@4g)@w+n5_mb6l(b-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tamara02.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -86,7 +86,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "daw_ti",
         "USER": "postgres",
-        "PASSWORD": "123456789",
+        "PASSWORD": "12345",
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
